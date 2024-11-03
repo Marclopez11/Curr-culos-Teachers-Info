@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Índice de Currículos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        .card h2 {
+            color: #4c51bf;
+        }
+        .card a {
+            color: #5a67d8;
+        }
+        .card a:hover {
+            color: #6b46c1;
+        }
+        @media (max-width: 640px) {
+            .container {
+                padding: 1rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .card {
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto py-12">
+        <h1 class="text-5xl font-bold mb-12 text-center text-white">Índice Completo de Currículos</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">1. Currículo de Educación Física</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Competencia 1: Resolución de situaciones motrices diversas</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Competencia 2: Trabajo en equipo y cooperación</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Competencia 3: Autoregulació de la práctica física</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=154') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">2. Currículo de Matemáticas</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Competencia 1: Resolución de problemas matemáticos</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Competencia 2: Comprensión de conceptos numéricos y geométricos</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Competencia 3: Uso de herramientas matemáticas</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=173') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">3. Currículo de Lengua y Literatura</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Competencia 1: Comprensión lectora crítica</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Competencia 2: Producción de textos creativos y argumentativos</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Competencia 3: Expresión oral efectiva</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=194') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">4. Currículo de Ciencias Naturales</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Competencia 1: Observación y experimentación</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Competencia 2: Comprensión de procesos biológicos y físicos</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Competencia 3: Aplicación de conocimientos científicos en la vida diaria</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">5. Currículo de Ciencias Sociales</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Competencia 1: Análisis crítico de la realidad social</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Competencia 2: Comprensión de la historia y su impacto en el presente</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Competencia 3: Participación activa en la comunidad</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=319') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+
+            <div class="card p-8">
+                <h2 class="text-3xl font-bold mb-6">6. Currículo de Educación Artística</h2>
+                <ul class="list-disc pl-6">
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Objetivos Generales</a></li>
+                    <li>Competencias Específicas
+                        <ul class="list-disc pl-8">
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Competencia 1: Creatividad en la producción artística</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Competencia 2: Conocimiento de técnicas y estilos artísticos</a></li>
+                            <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Competencia 3: Valoración del patrimonio cultural</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Contenidos</a></li>
+                    <li><a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="hover:underline">Criterios de Evaluación</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <h2 class="text-3xl font-bold mb-6 text-white">Consideraciones Finales:</h2>
+            <ul class="list-disc pl-8 text-white">
+                <li><strong>Interdisciplinariedad:</strong> <a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=203') }}" target="_blank" class="text-indigo-200 hover:text-indigo-400">Se fomenta la conexión entre diferentes áreas del conocimiento para un aprendizaje más integral</a>.</li>
+                <li><strong>Adaptación:</strong> <a href="{{ asset('storage/pdfs/documento_profesor.pdf#page=386') }}" target="_blank" class="text-indigo-200 hover:text-indigo-400">Los currículos deben ser adaptables a las necesidades y contextos de cada grupo de alumnos, promoviendo la inclusión y la diversidad</a>.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
