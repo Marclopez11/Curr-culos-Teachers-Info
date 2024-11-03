@@ -1,43 +1,90 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visor de PDF</title>
-    <link rel="stylesheet" href="/web/viewer.css">
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #toolbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+        #page-info {
+            display: inline-block;
+            margin: 0 10px;
+        }
+    </style>
 </head>
 <body>
-    <div id="viewer"></div>
+    <div id="pdf-viewer"></div>
+    <div id="toolbar">
+        <button id="prev-button">Anterior</button>
+        <span id="page-info"></span>
+        <button id="next-button">Siguiente</button>
+    </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const file = urlParams.get('file');
-            const page = parseInt(urlParams.get('page'), 10);
+            const url = new URL(window.location.href);
+            const pdfUrl = url.searchParams.get('pdf');
+            const page = parseInt(url.searchParams.get('page'), 10) || 1;
 
-            console.log('File:', file);
-            console.log('Page:', page);
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const pageInfo = document.getElementById('page-info');
 
-            pdfjsLib.getDocument(file).promise.then(pdf => {
-                console.log('PDF loaded');
-                pdf.getPage(page).then(page => {
+            // Cargar el documento PDF
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdf) {
+                // Obtener el total de páginas
+                const totalPages = pdf.numPages;
+
+                // Mostrar la página especificada
+                pdf.getPage(page).then(function(pdfPage) {
                     const scale = 1.5;
-                    const viewport = page.getViewport({ scale });
+                    const viewport = pdfPage.getViewport({ scale });
+
                     const canvas = document.createElement('canvas');
                     const context = canvas.getContext('2d');
                     canvas.height = viewport.height;
                     canvas.width = viewport.width;
-                    document.getElementById('viewer').appendChild(canvas);
 
                     const renderContext = {
                         canvasContext: context,
                         viewport: viewport
                     };
-                    page.render(renderContext);
+
+                    pdfPage.render(renderContext);
+
+                    document.getElementById('pdf-viewer').appendChild(canvas);
+
+                    // Actualizar información de página y botones de navegación
+                    pageInfo.textContent = `Página ${page} de ${totalPages}`;
+                    prevButton.disabled = page === 1;
+                    nextButton.disabled = page === totalPages;
                 });
-            }).catch(error => {
-                console.error('Error loading PDF:', error);
+            });
+
+            // Manejar eventos de clic en los botones de navegación
+            prevButton.addEventListener('click', function() {
+                window.location.href = `./viewer.html?pdf=${pdfUrl}&page=${page - 1}`;
+            });
+
+            nextButton.addEventListener('click', function() {
+                window.location.href = `./viewer.html?pdf=${pdfUrl}&page=${page + 1}`;
             });
         });
     </script>
